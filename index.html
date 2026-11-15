@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf7f0">
+  <meta name="description" content="Descubre cuántas horas de tu vida dedicas a ganar 600 € y decide a qué te gustaría dedicar ese tiempo.">
+  <title>¿Cuánto vale tu tiempo? — Domusa Alba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Cuánto vale tu tiempo, inicio">
+      <img src="logo-tiempo.png" alt="Cuánto vale tu tiempo, logotipo dorado sobre marfil">
+    </a>
+    <a class="header-link" href="#calculadora">Hacer el cálculo <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Una pausa para mirar tu día</p>
+        <h1>¿Cuánto vale<br>tu <em>tiempo</em>?</h1>
+        <p class="hero-lede">Hay cifras que no se quedan en la cuenta. Descubre cuántas horas de tu vida dedicas a ganar 600&nbsp;€.</p>
+        <a class="button button-dark" href="#calculadora">Calcular mi tiempo <span aria-hidden="true">↓</span></a>
+        <p class="quiet-note">Un cálculo orientativo. No guardamos tus respuestas.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-halo"></div>
+        <div class="sun-disc">
+          <svg class="hero-hourglass" viewBox="0 0 160 200" role="img" aria-label="Reloj de arena dorado">
+            <defs><linearGradient id="sand-gold" x1="0" x2="1"><stop offset="0" stop-color="#a96c1b"/><stop offset=".48" stop-color="#e0b557"/><stop offset="1" stop-color="#bd8730"/></linearGradient></defs>
+            <path class="glass-frame" d="M39 20h82M44 25c0 31 17 48 36 75-19 27-36 44-36 75m72-150c0 31-17 48-36 75 19 27 36 44 36 75M39 180h82"/>
+            <path class="glass-sand-top" d="M54 37h52c-2 19-13 33-26 51-13-18-24-32-26-51Z"/>
+            <path class="glass-sand-bottom" d="M52 164c5-18 18-31 28-43 10 12 23 25 28 43H52Z"/>
+            <path class="glass-stream" d="M80 91v21"/>
+            <path class="glass-shine" d="M51 30c3 27 12 39 25 54m-25 85c4-13 12-25 22-36"/>
+          </svg>
+        </div>
+        <div class="art-target"><span>600 €</span><small>UNA META, UNA PAUSA</small></div>
+        <div class="art-caption"><span>EL TIEMPO ES TUYO</span><i></i><span>ELIGE CÓMO VIVIRLO</span></div>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="calculadora">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="step">01</span> Tu punto de partida</p>
+          <h2>Pongamos el tiempo<br><em>en perspectiva.</em></h2>
+          <p>Introduce tu nómina neta mensual, horario y vacaciones para estimar el valor neto de cada hora trabajada y el tiempo necesario para ganar 600 €.</p>
+        </div>
+        <div class="calculator-grid">
+          <form class="calculator-card" id="calculator-form">
+            <label class="field-label" for="salary">Nómina neta mensual <span>después de descuentos</span></label>
+            <div class="input-wrap"><input id="salary" name="salary" type="number" min="1" max="100000" step="any" value="1800" required inputmode="decimal"><span>€ / mes</span></div>
+            <div class="field-grid">
+              <div>
+                <label class="field-label" for="hours">Horas por jornada</label>
+                <div class="input-wrap"><input id="hours" name="hours" type="number" min="1" max="24" step="0.25" value="8" required inputmode="decimal"><span>h</span></div>
+              </div>
+              <div>
+                <label class="field-label" for="days">Días que trabajas por semana</label>
+                <div class="input-wrap"><input id="days" name="days" type="number" min="1" max="7" step="0.5" value="5" required inputmode="decimal"><span>días</span></div>
+              </div>
+            </div>
+            <label class="field-label" for="vacation">Vacaciones laborables al año</label>
+            <div class="input-wrap"><input id="vacation" name="vacation" type="number" min="0" max="60" step="1" value="22" required inputmode="numeric"><span>días</span></div>
+            <label class="field-label" for="commute">Desplazamiento diario, ida y vuelta <span>solo los días que trabajas</span></label>
+            <div class="input-wrap"><input id="commute" name="commute" type="number" min="0" max="12" step="0.1" value="1" required inputmode="decimal"><span>h / día</span></div>
+            <button class="button button-gold calculate-button" type="submit">Ver mi resultado <span aria-hidden="true">→</span></button>
+            <p class="form-hint">Tus datos se procesan en este navegador para hacer el cálculo.</p>
+          </form>
+
+          <section class="result-card" id="result" aria-live="polite" aria-atomic="true">
+            <div class="result-topline"><span class="result-kicker">TU TIEMPO PARA GANAR</span><span class="result-target">600 €</span></div>
+            <div class="result-alert" id="result-alert" hidden><span class="alert-dot"></span>RESULTADO CALCULADO</div>
+            <div class="result-time" id="total-time"><span>—</span><small>Introduce tus datos para ver la estimación</small></div>
+            <div class="workday-summary"><span>Días de trabajo necesarios para los 600 €</span><strong id="workday-count">—</strong></div>
+            <div class="result-breakdown">
+              <div><span>Trabajo</span><strong id="work-time">—</strong></div>
+              <div><span>Desplazamiento</span><strong id="commute-time">—</strong></div>
+            </div>
+            <div class="assumption"><span class="assumption-icon">i</span><p id="calculation-explanation">Calculamos el ingreso neto anual y lo dividimos entre las horas anuales trabajadas, descontando las vacaciones laborables indicadas. Contamos un trayecto completo por cada jornada necesaria.</p></div>
+            <p class="fine-print">Estimación basada en 52 semanas. El último día puede ser parcial, pero se cuenta su desplazamiento completo. No descuenta festivos ni pausas no pagadas.</p>
+            <details class="formula-details">
+              <summary>Ver cómo se calcula</summary>
+              <ol>
+                <li>Ingreso neto anual estimado = nómina neta mensual × 12.</li>
+                <li>Horas anuales trabajadas = horas por jornada × días por semana × 52 − (horas por jornada × vacaciones laborables).</li>
+                <li>Valor neto por hora = ingreso neto anual ÷ horas anuales trabajadas.</li>
+                <li>Horas de trabajo para 600 € = 600 € ÷ valor neto por hora.</li>
+                <li>Desplazamiento = jornadas necesarias (redondeadas hacia arriba) × trayecto diario de ida y vuelta.</li>
+                <li>El total suma las horas de trabajo y los desplazamientos. Se redondea a minutos.</li>
+              </ol>
+              <p>Usamos el neto mensual indicado y estimamos el tiempo con las horas de trabajo anuales, descontando vacaciones laborables. <a href="https://www.calcularnomina.es/cuanto-vale-mi-tiempo" target="_blank" rel="noopener">Ver metodología de referencia</a>. Festivos y pausas no pagadas no se descuentan por separado.</p>
+            </details>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflection wrap" id="reflexion">
+      <div class="reflection-intro"><p class="eyebrow"><span class="step">02</span> Una pregunta para ti</p><h2>Si pudieras recuperar ese tiempo,<br><em>¿a qué te gustaría dedicarlo?</em></h2><p>No hay una respuesta correcta. Elige lo que ahora mismo te apetece tener un poco más cerca.</p></div>
+      <div class="activity-list" role="group" aria-label="Elige actividades para tu tiempo recuperado">
+        <button class="activity" type="button" aria-pressed="false" data-activity="Familia"><span class="activity-icon">♡</span><span>Familia</span><span class="checkmark">+</span></button>
+        <button class="activity" type="button" aria-pressed="false" data-activity="Viajar"><span class="activity-icon">↗</span><span>Viajar</span><span class="checkmark">+</span></button>
+        <button class="activity" type="button" aria-pressed="false" data-activity="Deporte"><span class="activity-icon">⌁</span><span>Deporte</span><span class="checkmark">+</span></button>
+        <button class="activity" type="button" aria-pressed="false" data-activity="Aficiones"><span class="activity-icon">✳</span><span>Aficiones</span><span class="checkmark">+</span></button>
+        <button class="activity" type="button" aria-pressed="false" data-activity="Ocio"><span class="activity-icon">☼</span><span>Ocio y descanso</span><span class="checkmark">+</span></button>
+      </div>
+      <div class="reflection-footer"><span id="selection-note" aria-live="polite">Puedes elegir varias opciones.</span><a href="#nueva-perspectiva">Continuar <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="perspective-section" id="nueva-perspectiva">
+      <div class="wrap perspective-wrap">
+        <div class="perspective-copy">
+          <p class="eyebrow"><span class="step">03</span> Una nueva perspectiva</p>
+          <h2>¿Y si el dinero no dependiera únicamente <em>de tu tiempo?</em></h2>
+          <p>Ya sabes cuánto tiempo necesitas para ganar 600 € y has reflexionado sobre cómo te gustaría aprovecharlo.</p>
+          <p>Pero ¿te has planteado que existen otras formas de generar ingresos, además de tu trabajo habitual?</p>
+          <h3>¿Te gustaría conocer alguna de estas posibilidades?</h3>
+          <div class="interest-actions" role="group" aria-label="¿Te interesa conocer otras posibilidades?">
+            <button class="button button-dark" id="interest-yes" type="button" aria-pressed="false">Sí, me interesa <span aria-hidden="true">→</span></button>
+            <button class="button button-outline" id="interest-no" type="button" aria-pressed="false">Ahora no</button>
+          </div>
+          <p class="no-interest-message" id="no-interest-message" role="status" hidden>De acuerdo. Gracias por dedicar un momento a pensar en el valor de tu tiempo.</p>
+        </div>
+        <div class="perspective-art" aria-hidden="true"><span class="perspective-quote">“</span><span>ELIGE CÓMO<br>VIVIR TU TIEMPO</span><i></i></div>
+      </div>
+      <div class="contact-panel" id="contact-panel" hidden>
+        <div class="wrap contact-grid">
+          <div><p class="eyebrow"><span class="step">04</span> Si te interesa explorar</p><h2>El primer paso es<br><em>conocer tus opciones.</em></h2><p>Déjanos tus datos y te explicaremos una propuesta de actividad comercial para generar ingresos complementarios, cómo funciona y qué necesitas para empezar.</p></div>
+          <form class="contact-form" id="contact-form">
+            <label class="field-label" for="name">Nombre</label><input class="text-input" id="name" name="name" autocomplete="name" required>
+            <div class="field-grid">
+              <div><label class="field-label" for="email">Correo electrónico</label><input class="text-input" id="email" name="email" type="email" autocomplete="email" required></div>
+              <div><label class="field-label" for="phone">Teléfono</label><input class="text-input" id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            </div>
+            <div class="privacy-box"><strong>Privacidad y contacto</strong><p>Usaríamos estos datos únicamente para responder a tu solicitud sobre la propuesta comercial. Esta vista previa no envía ni almacena información. Antes de activar el formulario se añadirán los datos del responsable del tratamiento y la política de privacidad completa.</p></div>
+            <label class="consent-label"><input id="consent" name="consent" type="checkbox" required><span>Consiento el tratamiento de mis datos y que me contacten para responder a esta solicitud, conforme a la información de privacidad. <b>*</b></span></label>
+            <button class="button button-gold" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="thank-you" id="thank-you" role="status" hidden><span class="thank-you-mark">✓</span><h3>Gracias por tu interés.</h3><p>Esta es una vista previa: tus datos no se han enviado ni recibido. El formulario se conectará cuando esté definida la gestión de contactos.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><img src="logo-tiempo.png" alt="Cuánto vale tu tiempo"><span>Una reflexión de Domusa Alba Investing</span></div><p class="footer-legal">Esta experiencia es informativa y orientativa. La propuesta comercial se explicará únicamente a las personas que soliciten más información.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
